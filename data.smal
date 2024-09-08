@@ -1,13 +1,17 @@
-[vida] --limit:1
+[vida] --limit:2
 32
-aqui vai ser um comentário pois "--limit:1" não suporta multilinha
+123
+aqui vai ser um comentário pois "--limit:2" limita a 2 linhas
+123213
+123sadfsd
+
 [lore]
 História muito boa
 # n sei oq, oq lá
 blá blá blá
-[personalidade] --ignorewhitespaces --allowcommentswith:#
+[personalidade] --ignorewhitespaces --ignorestarts:#
 Personalidade muito boa
-# isso será um comentário devido ao "--allowcommentswith:#"
+# isso será um comentário devido ao "--ignorestarts#"
 n sei oq, oq lá
 # o espaço abaixo será ignorado pois "--ignorewhitespaces"
 

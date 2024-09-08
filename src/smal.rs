@@ -59,12 +59,22 @@ pub fn read(path: &str, item: &str, get: &str) -> String{
                 index += 1;
             }
             _ => {
-                if content_data[index].starts_with("--allowcommentswith:"){
-                    let ign = content_data[index].replace("--allowcommentswith:", "");
+                if content_data[index].starts_with("--ignorestarts:"){
+                    let ign = content_data[index].replace("--ignorestarts:", "");
                     for i in content_content.clone(){
                         if !i.starts_with(ign.as_str()){
                             content_temp.push(i)
                         }
+                    }
+                    content_content.clear();
+                    content_content = content_temp.clone();
+                    content_temp.clear();
+                } else if content_data[index].starts_with("--limit:"){
+                    let limit: usize = content_data[index].replace("--limit:", "").parse().expect("msg");
+                    let mut index = 0;
+                    while index < limit {
+                        content_temp.push(content_content[index].clone());
+                        index += 1;
                     }
                     content_content.clear();
                     content_content = content_temp.clone();
