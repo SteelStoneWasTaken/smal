@@ -1,0 +1,17 @@
+[vida] --limit:1
+32
+aqui vai ser um comentário pois "--limit:1" não suporta multilinha
+[lore]
+História muito boa
+# n sei oq, oq lá
+blá blá blá
+[personalidade] --ignorewhitespaces --allowcommentswith:#
+Personalidade muito boa
+# isso será um comentário devido ao "--allowcommentswith:#"
+n sei oq, oq lá
+# o espaço abaixo será ignorado pois "--ignorewhitespaces"
+
+blá blá blá
+[]
+Como padrão, o formato será "string", no caso de lore o programa vai ler como string.
+Se faz necessário um "\n[]\n" para que o programa saiba onde a sitring acaba. Se quiser que apareça na sitring, basta escrever um espaço depois de "[]"
