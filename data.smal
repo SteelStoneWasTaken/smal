@@ -16,6 +16,5 @@ n sei oq, oq lá
 # o espaço abaixo será ignorado pois "--ignorewhitespaces"
 
 blá blá blá
-[]
+[] isso força o fim de uma variável
 Como padrão, o formato será "string", no caso de lore o programa vai ler como string.
-Se faz necessário um "\n[]\n" para que o programa saiba onde a sitring acaba. Se quiser que apareça na sitring, basta escrever um espaço depois de "[]"

@@ -18,6 +18,7 @@ pub fn read(path: &str, item: &str, get: &str) -> String{
     
     let mut content_data: Vec<String> = Vec::new();
     let mut content_content: Vec<String> = Vec::new();
+    let mut raw = String::new();
     let mut record = false;
     for i in contents.lines(){
         if record{
@@ -26,12 +27,18 @@ pub fn read(path: &str, item: &str, get: &str) -> String{
                 break;
             }
             content_content.push(i.to_string());
+            if get == "raw"{
+                raw.push('\n');
+                raw.push_str(i);
+            }
         } else {
             if i.contains(format!("[{}]",item).as_str())
             && i.chars().next() == Some('['){
+                if get == "raw"{
+                    raw.push_str(i);
+                }
                 content_data.push(item.to_string());
                 let i = i.replace(format!("[{}]", item).as_str(), "").trim().to_string();
-                
                 if !i.is_empty(){
                     for i in i.split_whitespace() {
                         content_data.push(i.to_string())
@@ -85,16 +92,18 @@ pub fn read(path: &str, item: &str, get: &str) -> String{
         }
     }
     
-    println!("{content_data:?}\n{content_content:?}");
+
     match get {
         "value" => {
-            return content_content.join("");
+            return content_content.join("\n");
         }
         "data" => {
-            return content_content.join(" / ");
+            return content_data.join(" ");
+        }
+        "raw" => {
+            return raw;
         }
         _ => {
-            println!("value");
             return content_content.join("");
         }
     }
