@@ -9,12 +9,14 @@ aqui vai ser um comentário pois "--limit:2" limita a 2 linhas
 História muito boa
 # n sei oq, oq lá
 blá blá blá
-[personalidade] --ignorewhitespaces --ignorestarts:#
-Personalidade muito boa
-# isso será um comentário devido ao "--ignorestarts#"
-n sei oq, oq lá
-# o espaço abaixo será ignorado pois "--ignorewhitespaces"
-
-blá blá blá
 [] isso força o fim de uma variável
 Como padrão, o formato será "string", no caso de lore o programa vai ler como string.
+
+
+// [personalidade] --ignorewhitespaces --ignorestarts:#
+// Personalidade muito boa
+// # isso será um comentário devido ao "--ignorestarts#"
+// n sei oq, oq lá
+// # o espaço abaixo será ignorado pois "--ignorewhitespaces"
+// 
+// blá blá blá
